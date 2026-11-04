@@ -17,9 +17,10 @@ from datetime import datetime
 OFF_FLAG = os.path.expanduser("~/.claude/speak_off")
 LOG = os.path.splitext(os.path.abspath(__file__))[0] + ".log"
 MAX_CHARS = 1500
-PIPER = os.environ.get("VOICECLAUDE_PIPER", os.path.expanduser("~/.local/share/piper/venv/bin/piper"))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PIPER = os.environ.get("VOICECLAUDE_PIPER", os.path.join(ROOT, ".venv", "bin", "piper"))
 # en_US-lessac-medium or en_US-amy-medium
-VOICE = os.environ.get("VOICECLAUDE_VOICE", os.path.expanduser("~/.local/share/piper/voices/en_US-lessac-medium.onnx"))
+VOICE = os.environ.get("VOICECLAUDE_VOICE", os.path.join(ROOT, "voices", "en_US-lessac-medium.onnx"))
 
 
 def last_reply_text(transcript_path: str) -> str:
