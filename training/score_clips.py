@@ -1,4 +1,17 @@
 #!/usr/bin/env python3
+# This file is part of voiceClaude.
+# Copyright (C) 2026 Gijs Vliegen
+#
+# voiceClaude is free software: you can redistribute it and/or modify it under the terms of the
+# GNU Affero General Public License as published by the Free Software Foundation, either version 3
+# of the License, or (at your option) any later version.
+#
+# voiceClaude is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License along with voiceClaude.
+# If not, see <https://www.gnu.org/licenses/>.
 """Score the wake-word models on your own recordings (made with record_clips.py).
 
   score_clips.py                  # threshold 0.8, models from the talk plugin
