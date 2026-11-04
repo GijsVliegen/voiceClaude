@@ -24,7 +24,7 @@ Guardrails against false triggers: a minimum loudness, nothing is detected while
 ## Layout
 
 ```
-voiceclaud                launcher: starts Claude in tmux and the keyword listener
+voiceclaud                launcher: runs voice_keys.py
 voice_keys.py             maps keywords to keys sent into the tmux session
 listen.py                 microphone -> keyword models -> detections
 keywords.example.json     template for keywords.json: your words, near-misses and hard cases
@@ -40,7 +40,7 @@ settings.example.json     the hooks block for ~/.claude/settings.json
 
 ## Setup
 
-1. **System tools:** `tmux`, `ydotool`, `aplay` (alsa-utils), `gnome-terminal`.
+1. **System tools:** `tmux`, `aplay` (alsa-utils), `gnome-terminal`.
 2. **Python environment** in the repo folder:
    ```sh
    python3 -m venv .venv
