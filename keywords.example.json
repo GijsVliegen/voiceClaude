@@ -1,0 +1,17 @@
+{
+  "start": {
+    "spellings": ["YOUR_START_WORD", "YOUR_START_WORD!", "YOUR_START_WORD?", "YOUR_START_WORD."],
+    "near_misses": ["hey Jarvis", "hey Google", "hey Siri", "okay", "hey there", "hello"],
+    "hard": {}
+  },
+  "stop": {
+    "spellings": ["YOUR_STOP_WORD", "YOUR_STOP_WORD!", "YOUR_STOP_WORD?", "YOUR_STOP_WORD."],
+    "near_misses": ["hey Jarvis", "hey Google", "hey Siri", "okay", "hey there", "hello"],
+    "hard": {}
+  },
+  "refresh": {
+    "spellings": ["YOUR_REFRESH_WORD", "YOUR_REFRESH_WORD!", "YOUR_REFRESH_WORD?", "YOUR_REFRESH_WORD."],
+    "near_misses": ["hey Jarvis", "hey Google", "hey Siri", "okay", "hey there", "hello"],
+    "hard": {}
+  }
+}

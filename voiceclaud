@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Starts the ydotool daemon if it is not running, then the voice key script.
+SOCK=/tmp/.ydotool_socket
+
+if ! pgrep -x ydotoold >/dev/null; then
+    sudo ydotoold --socket-path="$SOCK" --socket-own="$(id -u):$(id -g)" &
+    sleep 1
+fi
+
+export YDOTOOL_SOCKET="$SOCK"
+ROOT="$(dirname "$(readlink -f "$0")")"
+exec python3 "$ROOT/voice_keys.py"

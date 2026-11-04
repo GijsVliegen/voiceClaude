@@ -1,0 +1,8 @@
+numpy
+scipy
+sounddevice
+onnxruntime
+onnx
+scikit-learn
+piper-tts
+# openwakeword: install separately with --no-deps (see README)

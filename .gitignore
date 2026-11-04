@@ -1,0 +1,15 @@
+# your voice and the models trained on it
+recordings/
+models/*.onnx
+
+# your keywords (start from keywords.example.json)
+keywords.json
+
+# local setup
+.venv
+voices
+.cache/
+last_session.json
+hooks/voice_reminded/
+*.log
+__pycache__/

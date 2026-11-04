@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      { "hooks": [{ "type": "command", "command": "python3 /path/to/voiceClaude/hooks/speak_reply.py" }] }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [{ "type": "command", "command": "python3 /path/to/voiceClaude/hooks/voice_reminder.py" }] }
+    ],
+    "SessionStart": [
+      { "hooks": [{ "type": "command", "command": "python3 /path/to/voiceClaude/hooks/voiceclaud_session.py" }] },
+      { "matcher": "compact", "hooks": [{ "type": "command", "command": "python3 /path/to/voiceClaude/hooks/voice_reset.py" }] },
+      { "matcher": "clear", "hooks": [{ "type": "command", "command": "python3 /path/to/voiceClaude/hooks/voice_reset.py" }] }
+    ]
+  }
+}
