@@ -38,6 +38,44 @@ skills/voice-output/      the skill that tells Claude how to write the spoken pa
 settings.example.json     the hooks block for ~/.claude/settings.json
 ```
 
+## Setup with Claude Code
+
+Paste this prompt into Claude Code. Claude does the installation steps itself and walks you through the steps that need you: picking the keywords, recording your voice, and staying quiet when training records room noise. You can also follow the manual steps under [Setup](#setup).
+
+```text
+Install voiceClaude for me: https://github.com/GijsVliegen/voiceClaude
+Follow the "Setup" section of its README, step by step. Do the steps you can do
+yourself, and guide me through the steps that need me.
+
+1. Check the requirements (tmux, aplay, gnome-terminal, Python 3.10+). Tell me
+   what is missing and the command to install it. Ask me to run /voice once and
+   confirm that holding Space records me.
+2. Clone the repo (ask me where), create the .venv, install the requirements and
+   openwakeword (--no-deps), and download the openWakeWord feature models.
+3. Download the Piper voices into voices/.
+4. Help me pick my three keywords (start, stop, refresh). Explain what makes a
+   good keyword: an invented word of 2-3 syllables that sounds like nothing I
+   normally say, and three words that sound clearly different from each other.
+   Suggest a few options for each, let me choose, then write keywords.json
+   from keywords.example.json: a few spellings of each word, and near_misses
+   with real words that sound similar to mine.
+5. Recording needs my microphone and keyboard, so do not run it yourself. Tell
+   me to run training/record_clips.py and then training/record_clips.py --set
+   test in my own terminal (with the full .venv/bin/python path), and explain
+   what I have to do: say the word at ">>> SAY", and for the talking part, read
+   something aloud without the keywords. Wait until I say I am done.
+6. Before training, warn me that it first records 15 s of room noise and that I
+   must stay quiet then. Run training/train_all.sh in the background, and tell
+   me how long it takes. When it is done, run training/score_clips.py and
+   explain the results. If a keyword misses too often or triggers during
+   normal talking, suggest near-misses or extra recordings and retrain.
+7. Add the hooks from settings.example.json to ~/.claude/settings.json with the
+   real path (show me the change first), copy skills/voice-output to
+   ~/.claude/skills/, and offer to link voiceclaud into ~/.local/bin.
+8. Finish by telling me how to start it (./voiceclaud) and how to use my
+   keywords.
+```
+
 ## Setup
 
 Plan about an hour and a half: most of it is training, which runs on its own.
